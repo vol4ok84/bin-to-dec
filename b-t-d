@@ -1,0 +1,17 @@
+#include <stdio.h>
+ 
+int main(void) {
+    char bin[65];
+ 
+    while ( printf("bin > ") && scanf("%64[01]%*c", bin) == 1 ) {
+        char * ptr = bin;
+        unsigned dec = 0;
+        
+        for ( ; *ptr; ++ptr )
+            dec = ( dec << 1 ) | ( *ptr - '0' );
+        
+        printf("dec > %u\n", dec);
+    }
+ 
+    return 0;
+}
